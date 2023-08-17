@@ -12,6 +12,11 @@ fi
 
 # Customize to your needs...
 
+# 1Password CLI
+if [[ -s "${XDG_CONFIG_HOME:-$HOME/.config}/op/plugins.sh" ]]; then
+  source "${XDG_CONFIG_HOME:-$HOME/.config}/op/plugins.sh"
+fi
+
 # nvm: Calling `nvm use` automatically in a directory with a `.nvmrc` file
 # https://github.com/nvm-sh/nvm#calling-nvm-use-automatically-in-a-directory-with-a-nvmrc-file
 autoload -U add-zsh-hook
