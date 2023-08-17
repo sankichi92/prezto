@@ -12,14 +12,6 @@ fi
 
 # Customize to your needs...
 
-# Python 3
-alias python='python3'
-alias pip='pip3'
-alias pydoc='pydoc3'
-
-# pipx
-export PATH="$PATH:$HOME/.local/bin"
-
 # nvm: Calling `nvm use` automatically in a directory with a `.nvmrc` file
 # https://github.com/nvm-sh/nvm#calling-nvm-use-automatically-in-a-directory-with-a-nvmrc-file
 autoload -U add-zsh-hook
