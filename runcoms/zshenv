@@ -27,3 +27,8 @@ fi
 if [[ -s "${HOME}/.rye/env" ]]; then
   source "${HOME}/.rye/env"
 fi
+
+# Add PostgreSQL commands to PATH.
+if [[ -s "/opt/homebrew/opt/postgresql@15/bin" ]]; then
+  export PATH="/opt/homebrew/opt/postgresql@15/bin:$PATH"
+fi
