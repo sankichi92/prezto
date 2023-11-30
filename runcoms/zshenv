@@ -29,6 +29,11 @@ if [[ -s "${HOME}/.rye/env" ]]; then
 fi
 
 # Add PostgreSQL commands to PATH.
-if [[ -s "/opt/homebrew/opt/postgresql@15/bin" ]]; then
+if [[ -d "/opt/homebrew/opt/postgresql@15/bin" ]]; then
   export PATH="/opt/homebrew/opt/postgresql@15/bin:$PATH"
+fi
+
+# Add commands installed by pipx to PATH.
+if [[ -d "${HOME}/.local/bin" ]]; then
+  export PATH="$PATH:/${HOME}/.local/bin"
 fi
