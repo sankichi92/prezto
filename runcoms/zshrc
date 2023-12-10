@@ -19,7 +19,7 @@ fi
 
 # nvm: Calling `nvm use` automatically in a directory with a `.nvmrc` file
 # https://github.com/nvm-sh/nvm#calling-nvm-use-automatically-in-a-directory-with-a-nvmrc-file
-if command -v nvm &>/dev/null; then
+if (($+commands[nvm])); then
   autoload -U add-zsh-hook
 
   load-nvmrc() {
@@ -43,4 +43,10 @@ if command -v nvm &>/dev/null; then
 
   add-zsh-hook chpwd load-nvmrc
   load-nvmrc
+fi
+
+# Terraform autocomplete (added by `terraform -install-autocomplete`)
+if (($+commands[terraform])); then
+  autoload -U +X bashcompinit && bashcompinit
+  complete -o nospace -C $(which terraform) terraform
 fi
