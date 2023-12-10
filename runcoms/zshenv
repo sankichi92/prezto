@@ -24,8 +24,8 @@ fi
 
 # Add ~/.rye/shims to PATH.
 # https://rye-up.com/guide/installation/#add-shims-to-path
-if [[ -s "${HOME}/.rye/env" ]]; then
-  source "${HOME}/.rye/env"
+if [[ -s "${RYE_HOME:-${HOME}/.rye}/env" ]]; then
+  source "${RYE_HOME:-${HOME}/.rye}/env"
 fi
 
 # Add PostgreSQL commands to PATH.
