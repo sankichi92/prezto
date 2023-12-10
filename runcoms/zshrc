@@ -12,6 +12,19 @@ fi
 
 # Customize to your needs...
 
+autoload -Uz +X bashcompinit && bashcompinit
+
+# AWS CLI autocomplete
+# https://docs.aws.amazon.com/ja_jp/cli/latest/userguide/cli-configure-completion.html
+if (($+commands[aws])); then
+  complete -C $(which aws_completer) aws
+fi
+
+# Terraform autocomplete (added by `terraform -install-autocomplete`)
+if (($+commands[terraform])); then
+  complete -o nospace -C $(which terraform) terraform
+fi
+
 # 1Password CLI
 if [[ -s "${XDG_CONFIG_HOME:-$HOME/.config}/op/plugins.sh" ]]; then
   source "${XDG_CONFIG_HOME:-$HOME/.config}/op/plugins.sh"
@@ -43,10 +56,4 @@ if (($+commands[nvm])); then
 
   add-zsh-hook chpwd load-nvmrc
   load-nvmrc
-fi
-
-# Terraform autocomplete (added by `terraform -install-autocomplete`)
-if (($+commands[terraform])); then
-  autoload -U +X bashcompinit && bashcompinit
-  complete -o nospace -C $(which terraform) terraform
 fi
