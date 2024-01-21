@@ -32,7 +32,7 @@ fi
 
 # nvm: Calling `nvm use` automatically in a directory with a `.nvmrc` file
 # https://github.com/nvm-sh/nvm#calling-nvm-use-automatically-in-a-directory-with-a-nvmrc-file
-if (($+commands[nvm])); then
+if (($+functions[nvm])); then
   autoload -U add-zsh-hook
 
   load-nvmrc() {
