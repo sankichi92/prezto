@@ -28,6 +28,11 @@ if [[ -s "${RYE_HOME:-${HOME}/.rye}/env" ]]; then
   source "${RYE_HOME:-${HOME}/.rye}/env"
 fi
 
+# Add commands installed by pnpm to PATH.
+if [[ -s "${PNPM_HOME:-${HOME}/Library/pnpm}" ]]; then
+  export PATH="$PATH:${PNPM_HOME:-${HOME}/Library/pnpm}"
+fi
+
 # Add PostgreSQL commands to PATH.
 if [[ -d "/opt/homebrew/opt/postgresql@16/bin" ]]; then
   export PATH="/opt/homebrew/opt/postgresql@16/bin:$PATH"
