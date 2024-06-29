@@ -28,6 +28,11 @@ if [[ -s "${RYE_HOME:-${HOME}/.rye}/env" ]]; then
   source "${RYE_HOME:-${HOME}/.rye}/env"
 fi
 
+export VOLTA_HOME="${HOME}/.volta"
+if [[ -d "${VOLTA_HOME}/bin" ]]; then
+  export PATH="$PATH:${VOLTA_HOME}/bin"
+fi
+
 # Add commands installed by pnpm to PATH.
 if [[ -s "${PNPM_HOME:-${HOME}/Library/pnpm}" ]]; then
   export PATH="$PATH:${PNPM_HOME:-${HOME}/Library/pnpm}"
@@ -40,5 +45,5 @@ fi
 
 # Add commands installed by pipx to PATH.
 if [[ -d "${HOME}/.local/bin" ]]; then
-  export PATH="$PATH:/${HOME}/.local/bin"
+  export PATH="$PATH:${HOME}/.local/bin"
 fi
