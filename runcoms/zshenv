@@ -16,18 +16,16 @@ if [[ -e "${HOME}/Library/Group Containers/2BUA8C4S2C.com.1password/t/agent.sock
   export SSH_AUTH_SOCK="${HOME}/Library/Group Containers/2BUA8C4S2C.com.1password/t/agent.sock"
 fi
 
+# uv
+if [[ -s "$HOME/.local/bin/env" ]]; then
+  source "$HOME/.local/bin/env"
+fi
+
 # Cargo
 # https://www.rust-lang.org/tools/install/
 export CARGO_HOME="${HOME}/.cargo"
 if [[ -s "${CARGO_HOME}/env" ]]; then
   source "${CARGO_HOME}/env"
-fi
-
-# Rye
-# https://rye-up.com/guide/installation/#add-shims-to-path
-export RYE_HOME="${HOME}/.rye"
-if [[ -s "${RYE_HOME}/env" ]]; then
-  source "${RYE_HOME}/env"
 fi
 
 # Volta
