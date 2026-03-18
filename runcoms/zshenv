@@ -34,6 +34,12 @@ if [[ -d "${VOLTA_HOME}/bin" ]]; then
   export PATH="$PATH:${VOLTA_HOME}/bin"
 fi
 
+# Golang
+export GOPATH="${HOME}/go"
+if [[ -d "${GOPATH}/bin" ]]; then
+  export PATH="$PATH:${GOPATH}/bin"
+fi
+
 # brew info postgresql@16
 if [[ -d "/opt/homebrew/opt/postgresql@16/bin" ]]; then
   export PATH="$PATH:/opt/homebrew/opt/postgresql@16/bin"
