@@ -40,6 +40,11 @@ if [[ -d "${GOPATH}/bin" ]]; then
   export PATH="$PATH:${GOPATH}/bin"
 fi
 
+# Rancher Desktop
+if [[ -d "/Users/sankichi92/.rd/bin" ]]; then
+  export PATH="/Users/sankichi92/.rd/bin:$PATH"
+fi
+
 # brew info postgresql@16
 if [[ -d "/opt/homebrew/opt/postgresql@16/bin" ]]; then
   export PATH="$PATH:/opt/homebrew/opt/postgresql@16/bin"
