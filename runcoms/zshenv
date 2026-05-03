@@ -36,7 +36,9 @@ fi
 
 # Rancher Desktop
 if [[ -d "/Users/sankichi92/.rd/bin" ]]; then
-  export PATH="/Users/sankichi92/.rd/bin:$PATH"
+  export DOCKER_HOST="unix://$HOME/.rd/docker.sock"
+  export TESTCONTAINERS_DOCKER_SOCKET_OVERRIDE=/var/run/docker.sock
+  export TESTCONTAINERS_HOST_OVERRIDE="$(rdctl info --field ip-address 2>/dev/null)"
 fi
 
 # brew info postgresql@17
