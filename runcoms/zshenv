@@ -28,12 +28,6 @@ if [[ -s "${CARGO_HOME}/env" ]]; then
   source "${CARGO_HOME}/env"
 fi
 
-# Volta
-export VOLTA_HOME="${HOME}/.volta"
-if [[ -d "${VOLTA_HOME}/bin" ]]; then
-  export PATH="$PATH:${VOLTA_HOME}/bin"
-fi
-
 # Golang
 export GOPATH="${HOME}/go"
 if [[ -d "${GOPATH}/bin" ]]; then
