@@ -48,8 +48,7 @@ if ! zstyle -t ':prezto:module:git:alias' skip; then
   alias gbx='git branch --delete'
   alias gbX='git branch --delete --force'
 
-  # https://github.com/KOBA789/dotfiles/blob/143425f8499cd588a772cbc7f339a933a26834b8/.gitconfig#L16
-  alias gbxa='git branch --merged | grep -v \* | xargs -I % git branch -d %'
+  alias gbxa='git-branch-delete-merged'
 
   # Commit (c)
   alias gc='git commit --verbose'
